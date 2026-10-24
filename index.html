@@ -99,26 +99,37 @@
   </main>
   <footer><div class="wrap">OpenFlow AI • Projeto educacional aberto • Feito para aprender, testar e evoluir.</div></footer>
   <script>
-    const button = document.getElementById('generate');
-    button.addEventListener('click', () => {
-      const area = document.getElementById('area').value;
-      const task = document.getElementById('task').value.trim();
-      const result = document.getElementById('result');
-      if (!task) {
-        result.textContent = 'Descreva uma tarefa para montar o roteiro.';
-        return;
-      }
-      result.textContent =
-        'ROTEIRO INICIAL\\n' +
-        'Área: ' + area + '\\n' +
-        'Tarefa: ' + task + '\\n\\n' +
-        '1. Defina a entrada: quais informações são necessárias?\\n' +
-        '2. Escreva as etapas atuais e identifique repetições.\\n' +
-        '3. Escolha uma etapa simples para automatizar primeiro.\\n' +
-        '4. Defina como conferir a qualidade e tratar exceções.\\n' +
-        '5. Teste com dados fictícios, registre o resultado e revise.\\n\\n' +
-        'Nota: esta é uma demonstração baseada em regras, não uma resposta gerada por um modelo de IA.';
-    });
+    
+const button = document.getElementById("generate");
+
+button.addEventListener("click", () => {
+  const area = document.getElementById("area").value;
+  const task = document.getElementById("task").value.trim();
+  const result = document.getElementById("result");
+
+  if (!task) {
+    result.textContent = "Descreva uma tarefa para montar o roteiro.";
+    return;
+  }
+
+  const steps = [
+    "1. Defina as entradas necessárias.",
+    "2. Liste as etapas atuais e identifique repetições.",
+    "3. Escolha uma etapa simples para automatizar.",
+    "4. Defina critérios de qualidade e tratamento de erros.",
+    "5. Teste com dados fictícios e revise o resultado."
+  ];
+
+  result.textContent = [
+    "ROTEIRO INICIAL",
+    `Área: ${area}`,
+    `Tarefa: ${task}`,
+    "",
+    ...steps,
+    "",
+    "Nota: demonstração baseada em regras, sem integração com um modelo de IA."
+  ].join("\n");
+});
   </script>
 </body>
 </html>

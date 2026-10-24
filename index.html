@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Projeto demonstrativo de automação e inteligência artificial: ideias, fluxos e próximos passos.">
+  <title>OpenFlow AI — Automação inteligente</title>
+  <style>
+    :root{--navy:#101a35;--blue:#5267f2;--cyan:#51d6d0;--ink:#18213b;--muted:#68718a;--paper:#f6f8fc;--white:#fff}
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--paper);line-height:1.6}
+    a{color:inherit} .wrap{width:min(1100px,92%);margin:auto}
+    header{background:var(--navy);color:white;padding:20px 0}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+    .brand{font-weight:800;letter-spacing:-.04em;font-size:1.25rem}.brand span{color:var(--cyan)}
+    nav{display:flex;gap:20px;flex-wrap:wrap}nav a{text-decoration:none;color:#dce3ff;font-size:.92rem}
+    .hero{background:radial-gradient(ellipse at 80% 15%,#324a9c 0,transparent 38%),linear-gradient(135deg,#101a35,#202c5a);color:white;padding:88px 0 82px}
+    .eyebrow{text-transform:uppercase;letter-spacing:.16em;font-size:.76rem;font-weight:800;color:var(--cyan)}
+    h1{font-size:clamp(2.4rem,6vw,4.8rem);line-height:1.03;letter-spacing:-.055em;max-width:800px;margin:18px 0}
+    .hero p{font-size:1.12rem;max-width:680px;color:#dce3f7}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    .btn{display:inline-block;padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:750;border:1px solid transparent}
+    .primary{background:var(--cyan);color:#10213b}.secondary{border-color:#65719b;color:white}
+    main{padding:54px 0}.section-head{max-width:700px;margin-bottom:24px}
+    h2{font-size:clamp(1.7rem,3vw,2.4rem);letter-spacing:-.035em;line-height:1.15;margin:0 0 12px}
+    .muted{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{background:white;border:1px solid #e5e9f3;border-radius:18px;padding:23px;box-shadow:0 8px 30px #1c2a4b08}
+    .icon{display:grid;place-items:center;width:42px;height:42px;border-radius:13px;background:#edf0ff;color:#3447cf;font-size:1.25rem;margin-bottom:14px}
+    .card h3{margin:0 0 8px;font-size:1.1rem}.card p{margin:0;color:var(--muted)}
+    .demo{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center;background:#fff;border:1px solid #e5e9f3;border-radius:22px;padding:clamp(22px,4vw,38px);margin-top:48px}
+    .demo-box{background:#111b37;color:white;border-radius:18px;padding:24px}
+    .demo-box label{display:block;font-size:.9rem;color:#dce3f7;margin:14px 0 6px}
+    select,textarea{width:100%;border:1px solid #536084;background:#1b2748;color:white;padding:12px;border-radius:10px;font:inherit}
+    textarea{min-height:92px;resize:vertical}.demo-box button{margin-top:14px;border:0;border-radius:10px;background:var(--cyan);color:#10213b;padding:12px 16px;font-weight:800;cursor:pointer}
+    #result{white-space:pre-wrap;color:#e4eaff;font-size:.95rem;margin-top:16px;min-height:40px}
+    .steps{counter-reset:step;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .step{background:white;border:1px solid #e5e9f3;border-radius:16px;padding:22px}.step:before{counter-increment:step;content:"0" counter(step);display:block;color:var(--blue);font-weight:900;font-size:1.3rem;margin-bottom:12px}
+    footer{background:var(--navy);color:#dce3f7;padding:28px 0;font-size:.9rem}
+    @media(max-width:760px){.grid,.steps,.demo{grid-template-columns:1fr}.hero{padding:64px 0}.nav{align-items:flex-start}nav{gap:12px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <div class="brand">OpenFlow<span> AI</span></div>
+      <nav aria-label="Navegação principal">
+        <a href="#proposta">Proposta</a><a href="#laboratorio">Laboratório</a><a href="#como-funciona">Como funciona</a>
+      </nav>
+    </div>
+  </header>
+  <section class="hero">
+    <div class="wrap">
+      <div class="eyebrow">Projeto aberto • Experimento inicial</div>
+      <h1>Menos tarefas repetitivas. Mais espaço para pensar.</h1>
+      <p>Um projeto demonstrativo para explorar automação, inteligência artificial e fluxos de trabalho mais eficientes — começando pequeno, documentando tudo e evoluindo em público.</p>
+      <div class="actions">
+        <a class="btn primary" href="#laboratorio">Experimentar demonstração ↓</a>
+        <a class="btn secondary" href="#como-funciona">Ver como funciona</a>
+      </div>
+    </div>
+  </section>
+  <main class="wrap">
+    <section id="proposta">
+      <div class="section-head">
+        <div class="eyebrow">A proposta</div>
+        <h2>IA útil começa com um problema bem definido.</h2>
+        <p class="muted">O OpenFlow AI é um ponto de partida educacional: apresentar ideias de automação, estruturar processos e tornar os próximos passos claros. Esta versão funciona localmente no navegador e não envia dados para nenhum servidor.</p>
+      </div>
+      <div class="grid">
+        <article class="card"><div class="icon">⌘</div><h3>Mapear processos</h3><p>Transforme uma tarefa recorrente em etapas claras, com entradas, decisões e resultado esperado.</p></article>
+        <article class="card"><div class="icon">✦</div><h3>Explorar IA</h3><p>Use prompts bem construídos para gerar ideias, rascunhos e planos que uma pessoa pode revisar.</p></article>
+        <article class="card"><div class="icon">↗</div><h3>Melhorar continuamente</h3><p>Documente aprendizados, teste mudanças pequenas e publique versões incrementais.</p></article>
+      </div>
+    </section>
+    <section class="demo" id="laboratorio">
+      <div>
+        <div class="eyebrow">Laboratório interativo</div>
+        <h2>Monte um primeiro plano de automação.</h2>
+        <p class="muted">Escolha uma área, descreva uma tarefa e gere um roteiro inicial. A demonstração usa regras locais simples; ela não chama uma API de IA nem transmite o texto digitado.</p>
+        <p class="muted"><strong>Próximo passo:</strong> depois de validar o fluxo, esta interface pode ser conectada a uma API segura, com autenticação e proteção de credenciais no servidor.</p>
+      </div>
+      <div class="demo-box">
+        <label for="area">Área de aplicação</label>
+        <select id="area"><option>Marketing e conteúdo</option><option>Rotinas administrativas</option><option>Pesquisa e análise</option><option>Desenvolvimento de software</option><option>Atendimento ao cliente</option></select>
+        <label for="task">Tarefa que deseja melhorar</label>
+        <textarea id="task" placeholder="Ex.: organizar ideias e preparar um resumo semanal..."></textarea>
+        <button id="generate" type="button">Gerar roteiro</button>
+        <div id="result" aria-live="polite">Seu roteiro aparecerá aqui.</div>
+      </div>
+    </section>
+    <section id="como-funciona" style="padding:58px 0 10px">
+      <div class="section-head"><div class="eyebrow">Método</div><h2>Do problema ao protótipo, em três passos.</h2></div>
+      <div class="steps">
+        <article class="step"><h3>Descrever</h3><p class="muted">Registre a tarefa, quem a executa, a frequência e o que significa um bom resultado.</p></article>
+        <article class="step"><h3>Prototipar</h3><p class="muted">Crie uma solução pequena, teste com exemplos fictícios e identifique riscos ou limitações.</p></article>
+        <article class="step"><h3>Documentar</h3><p class="muted">Publique o que aprendeu, o que ainda não funciona e qual será a próxima melhoria.</p></article>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap">OpenFlow AI • Projeto educacional aberto • Feito para aprender, testar e evoluir.</div></footer>
+  <script>
+    const button = document.getElementById('generate');
+    button.addEventListener('click', () => {
+      const area = document.getElementById('area').value;
+      const task = document.getElementById('task').value.trim();
+      const result = document.getElementById('result');
+      if (!task) {
+        result.textContent = 'Descreva uma tarefa para montar o roteiro.';
+        return;
+      }
+      result.textContent =
+        'ROTEIRO INICIAL\\n' +
+        'Área: ' + area + '\\n' +
+        'Tarefa: ' + task + '\\n\\n' +
+        '1. Defina a entrada: quais informações são necessárias?\\n' +
+        '2. Escreva as etapas atuais e identifique repetições.\\n' +
+        '3. Escolha uma etapa simples para automatizar primeiro.\\n' +
+        '4. Defina como conferir a qualidade e tratar exceções.\\n' +
+        '5. Teste com dados fictícios, registre o resultado e revise.\\n\\n' +
+        'Nota: esta é uma demonstração baseada em regras, não uma resposta gerada por um modelo de IA.';
+    });
+  </script>
+</body>
+</html>
